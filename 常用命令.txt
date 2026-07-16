@@ -1,0 +1,49 @@
+==============================================
+  边缘AI学习 · 常用命令速查
+==============================================
+
+---- 环境管理 ----
+
+conda activate trt          进工作间（trt 环境，装了你所有的 AI 包）
+conda deactivate             退出工作间，回到 base 环境
+conda info --envs            查看有哪些环境
+
+---- 运行脚本 ----
+
+python xxx.py                用 Python 执行 xxx.py 这个脚本
+
+---- 检查工具 ----
+
+nvidia-smi                   看显卡状态（型号、显存、CUDA 版本）
+python --version             看当前 Python 版本
+pip list                     看当前环境装了哪些包
+
+---- 安装包 ----
+
+pip install 包名              装一个 Python 包
+pip uninstall 包名            删一个 Python 包
+
+---- 第一个快捷键 ----
+
+在 PowerShell 里按 ↑（上箭头）   调出上一条命令，不用重新敲
+
+---- 文件相关 ----
+
+ls                           看当前目录下有哪些文件
+
+---- 阶段一学到的 Python 语句（认个脸熟）----
+
+import xxx                   导入一个包（比如 import torch）
+model = xxx                  把东西赋值给一个变量
+model.eval()                 把模型切到推理模式
+model.cuda()                 把模型搬到 GPU
+torch.randn(x,y,z)           生成 x×y×z 的随机张量
+.data_ptr()                  取 GPU 张量的显存地址
+.argmax()                    找张量里最大值的索引
+
+---- 阶段一完成（2026-07-16）----
+
+PyTorch → ONNX → TensorRT → 推理 → 3.21倍加速
+
+==============================================
+以后每学新命令会往这里加。
